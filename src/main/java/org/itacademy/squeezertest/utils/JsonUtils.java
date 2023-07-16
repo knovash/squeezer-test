@@ -1,4 +1,4 @@
-package org.itacademy.onlinertest.utils;
+package org.itacademy.squeezertest.utils;
 
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
