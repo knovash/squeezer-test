@@ -7,7 +7,6 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import java.net.MalformedURLException;
@@ -19,7 +18,6 @@ public class BaseTest {
 
     private final ResourceBundle bundle = ResourceBundle.getBundle("config");
     public final String SERVERADDRESS = bundle.getString("serverAddress");
-    public final String APPIUMDRIVER = bundle.getString("appiumDriver");
     private AppiumDriver<MobileElement> driver;
 
     @BeforeClass

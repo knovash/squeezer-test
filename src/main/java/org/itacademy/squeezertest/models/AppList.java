@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
 import java.util.Set;
 
 @Data
@@ -12,6 +11,5 @@ import java.util.Set;
 @AllArgsConstructor
 public class AppList {
 
-//    public List<String> names;
-    public Set<String> names;
+    public Set<String> appNames;
 }

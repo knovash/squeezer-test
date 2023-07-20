@@ -7,7 +7,6 @@ import org.itacademy.squeezertest.utils.WaitUtils;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
