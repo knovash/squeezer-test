@@ -24,8 +24,8 @@ public class SqueezerTest extends BaseTest {
         myAppsSteps.buttonTipsOkClick();
         myAppsSteps.buttonMyAppsClick();
         Set<String> appNames = myAppsSteps.getListAppNames();
-        log.info("APP LIST ORIGINAL: " + appListOriginal.appNames);
+        log.info("APP LIST ORIGINAL: " + appListOriginal.names);
         log.info("APP LIST GET: " + appNames);
-        Assert.assertEquals(appListOriginal.appNames, appNames);
+        Assert.assertEquals(appListOriginal.names, appNames);
     }
 }

@@ -11,5 +11,5 @@ import java.util.Set;
 @AllArgsConstructor
 public class AppList {
 
-    public Set<String> appNames;
+    public Set<String> names;
 }
