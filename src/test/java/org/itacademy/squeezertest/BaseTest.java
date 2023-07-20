@@ -6,7 +6,9 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -16,28 +18,30 @@ import java.util.ResourceBundle;
 public class BaseTest {
 
     private final ResourceBundle bundle = ResourceBundle.getBundle("config");
-    public final String APPPAKAGE = bundle.getString("appPackage");
-    public final String APPACTIVITY = bundle.getString("appActivity");
     public final String SERVERADDRESS = bundle.getString("serverAddress");
     public final String APPIUMDRIVER = bundle.getString("appiumDriver");
-    public final String PLATFORMNAME = bundle.getString("platformName");
-    public final String PLATFORMVERSION = bundle.getString("platformVersion");
-    public final String DEVICENAME = bundle.getString("deviceName");
-
     private AppiumDriver<MobileElement> driver;
 
-    @BeforeMethod
-    public void beforeMethod() {
+    @BeforeClass
+    @Parameters({"platformName", "platformVersion", "deviceName", "appiumDriver", "appPackage", "appActivity"})
+    public void beforeMethod(
+            String platformName,
+            String platformVersion,
+            String deviceName,
+            String appiumDriver,
+            String appPackage,
+            String appActivity
+    ) {
         log.info("BEFORE METHOD");
         WebDriverRunner.closeWebDriver();
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, PLATFORMNAME);
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, PLATFORMVERSION);
-        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, DEVICENAME);
-        capabilities.setCapability("appPackage", APPPAKAGE);
-        capabilities.setCapability("appActivity", APPACTIVITY);
+        capabilities.setCapability("appPackage", appPackage);
+        capabilities.setCapability("appActivity", appActivity);
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, platformName);
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, platformVersion);
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
         try {
-            driver = new AppiumDriver<>(new URL(APPIUMDRIVER), capabilities);
+            driver = new AppiumDriver<>(new URL(appiumDriver), capabilities);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
