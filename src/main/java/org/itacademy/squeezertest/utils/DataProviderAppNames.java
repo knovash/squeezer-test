@@ -3,6 +3,7 @@ package org.itacademy.squeezertest.utils;
 import lombok.extern.log4j.Log4j2;
 import org.itacademy.squeezertest.models.AppList;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 
 import java.util.ResourceBundle;
 

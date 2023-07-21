@@ -5,16 +5,20 @@ import lombok.extern.log4j.Log4j2;
 import org.itacademy.squeezertest.pages.SqueezerPage;
 import org.itacademy.squeezertest.utils.WaitUtils;
 import org.openqa.selenium.By;
+import io.qameta.allure.Step;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 
 import java.util.Set;
 import java.util.stream.Collectors;
 
 @Log4j2
+@Listeners
 public class MyAppsSteps {
 
     private SqueezerPage squeezerPage = new SqueezerPage();
 
+    @Step("inputServerAddress")
     public void inputServerAddress(String value) {
         log.info("inputServerAddress");
         WaitUtils.waitForElement(squeezerPage.inputServerAddress);
@@ -23,6 +27,7 @@ public class MyAppsSteps {
         squeezerPage.inputServerAddress.setValue(value);
     }
 
+    @Step("buttonConnectClick")
     public void buttonConnectClick() {
         log.info("buttonConnectClick");
         WaitUtils.waitForElement(squeezerPage.buttonConnect);
@@ -31,6 +36,7 @@ public class MyAppsSteps {
         squeezerPage.buttonConnect.click();
     }
 
+    @Step("buttonTipsOkClick")
     public void buttonTipsOkClick() {
         log.info("buttonTipsOkClick");
         WaitUtils.waitForElement(squeezerPage.buttonTipsOk);
@@ -39,6 +45,7 @@ public class MyAppsSteps {
         squeezerPage.buttonTipsOk.click();
     }
 
+    @Step("buttonMyAppsClick")
     public void buttonMyAppsClick() {
         log.info("buttonMyAppsClick");
         WaitUtils.waitForElement(squeezerPage.buttonMyApps);
@@ -47,6 +54,7 @@ public class MyAppsSteps {
         squeezerPage.buttonMyApps.click();
     }
 
+    @Step("getListAppNames")
     public Set<String> getListAppNames() {
         log.info("viewMyAppsList");
         WaitUtils.waitForElement(squeezerPage.viewMyAppsList);

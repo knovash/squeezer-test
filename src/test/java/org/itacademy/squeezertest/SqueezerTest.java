@@ -5,11 +5,13 @@ import org.itacademy.squeezertest.models.AppList;
 import org.itacademy.squeezertest.steps.MyAppsSteps;
 import org.itacademy.squeezertest.utils.DataProviderAppNames;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.util.Set;
 
 @Log4j2
+@Listeners
 public class SqueezerTest extends BaseTest {
 
     private MyAppsSteps myAppsSteps = new MyAppsSteps();
