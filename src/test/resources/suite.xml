@@ -2,10 +2,16 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Mobile app test. Squeeezer" parallel="tests" thread-count="1">
 
-
     <listeners>
         <listener class-name="org.itacademy.squeezertest.utils.AllureListener"></listener>
     </listeners>
+
+    <parameter name="appiumDriver" value="http://localhost:4723/wd/hub"/>
+    <parameter name="appPackage" value="uk.org.ngo.squeezer"/>
+    <parameter name="appActivity" value="uk.org.ngo.squeezer.itemlist.HomeActivity"/>
+    <parameter name="platformName" value="Android"/>
+    <parameter name="platformVersion" value="9.0"/>
+    <parameter name="deviceName" value="Pixel"/>
 
     <test name="Test. Check my apps list">
         <classes>
