@@ -6,7 +6,6 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.qameta.allure.selenide.AllureSelenide;
-import io.qameta.allure.selenide.LogType;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeClass;
@@ -17,7 +16,6 @@ import org.testng.annotations.Parameters;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
 
 @Log4j2
 @Listeners
@@ -25,14 +23,6 @@ public class BaseTest {
 
     private final ResourceBundle bundle = ResourceBundle.getBundle("config");
     public final String SERVERADDRESS = bundle.getString("serverAddress");
-
-//    public final String platformName = bundle.getString("platformName");
-//    public final String platformVersion = bundle.getString("platformVersion");
-//    public final String deviceName = bundle.getString("deviceName");
-//    public final String appiumDriver = bundle.getString("appiumDriver");
-//    public final String appPackage = bundle.getString("appPackage");
-//    public final String appActivity = bundle.getString("appActivity");
-
     private AppiumDriver<MobileElement> driver;
 
     @BeforeClass
