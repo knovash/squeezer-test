@@ -16,9 +16,9 @@ import java.util.stream.Collectors;
 @Listeners
 public class MyAppsSteps {
 
-    private SqueezerPage squeezerPage = new SqueezerPage();
+    private final SqueezerPage squeezerPage = new SqueezerPage();
 
-    @Step("inputServerAddress")
+    @Step("Input server address")
     public void inputServerAddress(String value) {
         log.info("inputServerAddress");
         WaitUtils.waitForElement(squeezerPage.inputServerAddress);
@@ -27,7 +27,7 @@ public class MyAppsSteps {
         squeezerPage.inputServerAddress.setValue(value);
     }
 
-    @Step("buttonConnectClick")
+    @Step("Button connect click")
     public void buttonConnectClick() {
         log.info("buttonConnectClick");
         WaitUtils.waitForElement(squeezerPage.buttonConnect);
@@ -36,7 +36,7 @@ public class MyAppsSteps {
         squeezerPage.buttonConnect.click();
     }
 
-    @Step("buttonTipsOkClick")
+    @Step("Button tips ok click")
     public void buttonTipsOkClick() {
         log.info("buttonTipsOkClick");
         WaitUtils.waitForElement(squeezerPage.buttonTipsOk);
@@ -45,7 +45,7 @@ public class MyAppsSteps {
         squeezerPage.buttonTipsOk.click();
     }
 
-    @Step("buttonMyAppsClick")
+    @Step("Button my apps click")
     public void buttonMyAppsClick() {
         log.info("buttonMyAppsClick");
         WaitUtils.waitForElement(squeezerPage.buttonMyApps);
@@ -54,7 +54,7 @@ public class MyAppsSteps {
         squeezerPage.buttonMyApps.click();
     }
 
-    @Step("getListAppNames")
+    @Step("Get list app names")
     public Set<String> getListAppNames() {
         log.info("viewMyAppsList");
         WaitUtils.waitForElement(squeezerPage.viewMyAppsList);
