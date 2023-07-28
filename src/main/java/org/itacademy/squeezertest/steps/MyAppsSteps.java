@@ -3,6 +3,7 @@ package org.itacademy.squeezertest.steps;
 import com.codeborne.selenide.ElementsCollection;
 import lombok.extern.log4j.Log4j2;
 import org.itacademy.squeezertest.pages.SqueezerPage;
+import org.itacademy.squeezertest.utils.AllureListener;
 import org.itacademy.squeezertest.utils.WaitUtils;
 import org.openqa.selenium.By;
 import io.qameta.allure.Step;
@@ -22,6 +23,7 @@ public class MyAppsSteps {
     public void inputServerAddress(String value) {
         log.info("inputServerAddress");
         WaitUtils.waitForElement(squeezerPage.inputServerAddress);
+        AllureListener.saveScreenshot();
         Assert.assertTrue(squeezerPage.inputServerAddress.isDisplayed());
         log.info("inputServerAddress DISP: " + squeezerPage.inputServerAddress.isDisplayed());
         squeezerPage.inputServerAddress.setValue(value);
@@ -31,6 +33,7 @@ public class MyAppsSteps {
     public void buttonConnectClick() {
         log.info("buttonConnectClick");
         WaitUtils.waitForElement(squeezerPage.buttonConnect);
+        AllureListener.saveScreenshot();
         Assert.assertTrue(squeezerPage.buttonConnect.isDisplayed());
         log.info("buttonConnect DISP: " + squeezerPage.buttonConnect.isDisplayed());
         squeezerPage.buttonConnect.click();
@@ -40,6 +43,7 @@ public class MyAppsSteps {
     public void buttonTipsOkClick() {
         log.info("buttonTipsOkClick");
         WaitUtils.waitForElement(squeezerPage.buttonTipsOk);
+        AllureListener.saveScreenshot();
         Assert.assertTrue(squeezerPage.buttonTipsOk.isDisplayed());
         log.info("buttonTipsOk DISP: " + squeezerPage.buttonTipsOk.isDisplayed());
         squeezerPage.buttonTipsOk.click();
@@ -49,6 +53,7 @@ public class MyAppsSteps {
     public void buttonMyAppsClick() {
         log.info("buttonMyAppsClick");
         WaitUtils.waitForElement(squeezerPage.buttonMyApps);
+        AllureListener.saveScreenshot();
         Assert.assertTrue(squeezerPage.buttonMyApps.isDisplayed());
         log.info("buttonMyApps DISP: " + squeezerPage.buttonMyApps.isDisplayed());
         squeezerPage.buttonMyApps.click();
@@ -58,6 +63,7 @@ public class MyAppsSteps {
     public Set<String> getListAppNames() {
         log.info("viewMyAppsList");
         WaitUtils.waitForElement(squeezerPage.viewMyAppsList);
+        AllureListener.saveScreenshot();
         Assert.assertTrue(squeezerPage.viewMyAppsList.isDisplayed());
         log.info("viewMyAppsList DISP: " + squeezerPage.viewMyAppsList.isDisplayed());
         ElementsCollection elementsMyApp = squeezerPage.viewMyAppsList.$$(By.xpath(".//android.view.ViewGroup"));
